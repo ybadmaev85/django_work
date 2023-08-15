@@ -12,6 +12,7 @@ class Category(models.Model):
     class Meta:
         verbose_name = 'Категория'
         verbose_name_plural = 'Категории'
+
 class Product(models.Model):
     name = models.CharField(max_length=50, verbose_name='Наименование')
     description = models.TextField(max_length= 150, verbose_name='Описание')
@@ -22,9 +23,9 @@ class Product(models.Model):
     last_change = models.DateField(**NULLABLE, verbose_name='Дата последнего изменения')
 
     def __str__(self):
-        return f'{self.name} ({self.categor})'
+        return f'{self.name} ({self.category})'
     class Meta:
-        verbose_name = 'собака'
-        verbose_name_plural = 'собаки'
+        verbose_name = 'продукт'
+        verbose_name_plural = 'продукты'
         ordering = ('name',)
 
